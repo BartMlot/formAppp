@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<table>
+	<tr>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Picture</th>
+	</tr>
+	{% for user in users %}
+		<tr>
+			<td>{{ user.firstName }}</td>
+			<td>{{ user.lastName }}</td>
+			<td>
+			<img src="{{ asset('/uploads/' ~ user.picture) }}" width="50" height="50">
+			</td>
+		</tr>
+	{% endfor %}
+
+
+</table>
+
+{% endblock %}

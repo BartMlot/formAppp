@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+<div class="example-wrapper">
+    {{ form_start(form) }}
+
+    {{ form_row(form.firstName) }}
+
+    {{ form_row(form.lastName) }}
+
+    {{ form_row(form.picture) }}
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+        
+    {{ form_end(form) }}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
